@@ -1,14 +1,19 @@
 public class Data {
-    private String url;
+    private String link_csv;
     private String Campeonato;
     private String Season;
 
-    public String getUrl() {
-        return url;
+    public Data(String link_csv, String campeonato) {
+        this.link_csv = link_csv;
+        Campeonato = campeonato;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public String getLink_csv() {
+        return link_csv;
+    }
+
+    public void setLink_csv(String link_csv) {
+        this.link_csv = link_csv;
     }
 
     public String getCampeonato() {
@@ -25,5 +30,13 @@ public class Data {
 
     public void setSeason(String season) {
         Season = season;
+    }
+
+    @Override
+    public String toString() {
+        return "Data{" +
+                "link_csv='" + link_csv + '\'' +
+                ", Campeonato='" + Campeonato + '\'' +
+                '}';
     }
 }

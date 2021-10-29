@@ -4,6 +4,8 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class WebCrawler {
 
@@ -15,14 +17,17 @@ public class WebCrawler {
 
         Elements links = document.select("a[href^=mmz]");
 
-        String relHref;
+
+        String link_csv;
+        String campeonato;
+        List<Data> lista_data = new ArrayList<Data>();
         for (Element link: links) {
-            relHref = link.attr("abs:href");
-            System.out.println(relHref);
+            link_csv = link.attr("abs:href");
+            campeonato = link.text();
+            Data d = new Data(link_csv, campeonato);
+            lista_data.add(d);
         }
 
-//        for (Element link: links) {
-//            System.out.println(link);
-//        }
+        System.out.println(lista_data.toString());
     }
 }
