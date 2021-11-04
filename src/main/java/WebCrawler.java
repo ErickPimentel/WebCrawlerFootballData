@@ -35,7 +35,7 @@ public class WebCrawler {
             league = link.text();
             season = link.attr("href").substring(8,12);
 
-            Dados d = new Dados(country, link_csv, league, season);
+            Dados d = new Dados(link_csv, country, league, season);
             lista_dados.add(d);
         }
 

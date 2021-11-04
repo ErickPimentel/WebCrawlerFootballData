@@ -28,14 +28,12 @@ public class Dados {
         return season;
     }
 
-
-
-
     @Override
     public String toString() {
         return "Dados{" +
                 "link_csv='" + link_csv + '\'' +
-                ", divisao='" + league + '\'' +
+                ", country='" + country + '\'' +
+                ", league='" + league + '\'' +
                 ", season='" + season + '\'' +
                 '}';
     }
