@@ -9,25 +9,29 @@ import java.util.List;
 
 public class WebCrawler {
 
-    public static void main(String[] args) throws IOException {
-
+    public List<Dados> getDados() throws IOException {
         String url = "https://www.football-data.co.uk/englandm.php";
 
         Document document = Jsoup.connect(url).get();
 
         Elements links = document.select("a[href^=mmz]");
+        Elements seasons = document.select("i");
 
 
         String link_csv;
-        String campeonato;
-        List<Data> lista_data = new ArrayList<Data>();
+        String divisao;
+        String season;
+        List<Dados> lista_data = new ArrayList<Dados>();
         for (Element link: links) {
+
+
             link_csv = link.attr("abs:href");
-            campeonato = link.text();
-            Data d = new Data(link_csv, campeonato);
+            divisao = link.text();
+
+            Dados d = new Dados(link_csv, divisao);
             lista_data.add(d);
         }
 
-        System.out.println(lista_data.toString());
+        return lista_data;
     }
 }

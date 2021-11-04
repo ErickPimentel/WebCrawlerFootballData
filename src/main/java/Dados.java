@@ -1,11 +1,11 @@
-public class Data {
+public class Dados {
     private String link_csv;
-    private String Campeonato;
-    private String Season;
+    private String divisao;
+    private String season;
 
-    public Data(String link_csv, String campeonato) {
+    public Dados(String link_csv, String divisao) {
         this.link_csv = link_csv;
-        Campeonato = campeonato;
+        this.divisao = divisao;
     }
 
     public String getLink_csv() {
@@ -16,27 +16,27 @@ public class Data {
         this.link_csv = link_csv;
     }
 
-    public String getCampeonato() {
-        return Campeonato;
+    public String getDivisao() {
+        return divisao;
     }
 
-    public void setCampeonato(String campeonato) {
-        Campeonato = campeonato;
+    public void setDivisao(String divisao) {
+        this.divisao = divisao;
     }
 
     public String getSeason() {
-        return Season;
+        return season;
     }
 
     public void setSeason(String season) {
-        Season = season;
+        this.season = season;
     }
 
     @Override
     public String toString() {
-        return "Data{" +
+        return "Dados{" +
                 "link_csv='" + link_csv + '\'' +
-                ", Campeonato='" + Campeonato + '\'' +
+                ", divisao='" + divisao + '\'' +
                 '}';
     }
 }
