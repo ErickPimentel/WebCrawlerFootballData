@@ -9,7 +9,7 @@ import java.util.List;
 
 public class WebCrawler {
 
-    public List<Dados> getDados() throws IOException {
+    public List<Dados> run() throws IOException {
         String url = "https://www.football-data.co.uk/englandm.php";
 
         Document document = Jsoup.connect(url).get();

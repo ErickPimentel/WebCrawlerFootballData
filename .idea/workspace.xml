@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5018b477-e483-44e4-9227-cbd18ecce5f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/commons_io_2_11_0_javadoc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dados.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GerenciadorCSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GerenciadorCSV.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/WebCrawler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebCrawler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Data.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WebCrawler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WebCrawler.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,9 +44,16 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="GerenciadorCSV" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GerenciadorCSV" />
+      <module name="WebCrawlerFootballData" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="WebCrawlerFootballData" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -64,6 +68,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.GerenciadorCSV" />
         <item itemvalue="Application.WebCrawler" />
       </list>
