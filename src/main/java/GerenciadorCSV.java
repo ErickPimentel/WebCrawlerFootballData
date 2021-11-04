@@ -9,23 +9,24 @@ public class GerenciadorCSV {
     public void baixa(List<Dados> lista_dados) throws IOException{
         for (Dados dados: lista_dados) {
             URL url = new URL(dados.getLink_csv());
-            String fileName = dados.getLink_csv().substring(40,44) + "_" + dados.getDivisao();
-            String filePath = "C:\\Users\\Erick\\Desktop\\Dados\\" +  fileName;
-            File file = new File(filePath);
+            String fileName = dados.getLink_csv().substring(40,44) + "_" + dados.getDivisao() + ".csv";
+            String filePath = "C:\\Users\\Erick\\Desktop\\Dados\\v1\\";
+            String fileAbsPath = filePath + fileName;
+            File file = new File(fileAbsPath);
             FileUtils.copyURLToFile(url, file);
 
-            adicionaColunaDivisao(filePath, dados);
+            adicionaColunaDivisao(filePath, fileName, dados);
         }
     }
 
-    public void adicionaColunaDivisao(String filePath, Dados dados) throws IOException {
+    public void adicionaColunaDivisao(String filePath, String fileName, Dados dados) throws IOException {
         BufferedReader br = null;
         BufferedWriter bw = null;
         final String lineSep = System.getProperty("line.separator");
 
         try {
-            File file = new File(filePath);
-            File file2 = new File(filePath + ".1");
+            File file = new File(filePath, fileName);
+            File file2 = new File("C:\\Users\\Erick\\Desktop\\Dados\\v2\\", fileName);
 
             br = new BufferedReader(new InputStreamReader(new FileInputStream(file))) ;
             bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file2)));
