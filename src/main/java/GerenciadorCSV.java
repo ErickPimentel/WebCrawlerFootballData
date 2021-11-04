@@ -15,11 +15,11 @@ public class GerenciadorCSV {
             File file = new File(fileAbsPath);
             FileUtils.copyURLToFile(url, file);
 
-            adicionaColunaDivisao(filePath, fileName, dados);
+            adicionaColunas(filePath, fileName, dados);
         }
     }
 
-    public void adicionaColunaDivisao(String filePath, String fileName, Dados dados) throws IOException {
+    public void adicionaColunas(String filePath, String fileName, Dados dados) throws IOException {
         BufferedReader br = null;
         BufferedWriter bw = null;
         final String lineSep = System.getProperty("line.separator");
@@ -36,11 +36,12 @@ public class GerenciadorCSV {
             int iteraction = 0;
             for(line = br.readLine(); line != null; line = br.readLine(), i++){
                 if (iteraction==0){
-                    bw.write(line+","+"Divisao"+","+"Season"+lineSep);
+                    bw.write(line+","+"Country"+","+"League"+","+"Season"+lineSep);
                 }else {
-                    String addedColumnDivisao = String.valueOf(dados.getLeague());
+                    String addedColumnCountry = String.valueOf(dados.getCountry());
+                    String addedColumnLeague = String.valueOf(dados.getLeague());
                     String addedColumnSeason = String.valueOf(dados.getSeason());
-                    bw.write(line+","+addedColumnDivisao+","+addedColumnSeason+lineSep);
+                    bw.write(line+","+addedColumnCountry+","+addedColumnLeague+","+addedColumnSeason+lineSep);
                 }
                 iteraction++;
             }
