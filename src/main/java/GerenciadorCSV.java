@@ -9,7 +9,7 @@ public class GerenciadorCSV {
     public void baixa(List<Dados> lista_dados) throws IOException{
         for (Dados dados: lista_dados) {
             URL url = new URL(dados.getLink_csv());
-            String fileName = dados.getLink_csv().substring(40,44) + "_" + dados.getDivisao() + ".csv";
+            String fileName = dados.getLink_csv().substring(40,44) + "_" + dados.getDivisao();
             String filePath = "C:\\Users\\Erick\\Desktop\\Dados\\" +  fileName;
             File file = new File(filePath);
             FileUtils.copyURLToFile(url, file);
@@ -32,14 +32,15 @@ public class GerenciadorCSV {
 
             String line = null;
             int i = 0;
+            int iteraction = 0;
             for(line = br.readLine(); line != null; line = br.readLine(), i++){
-                String addedColumn = String.valueOf(dados.getDivisao());
-                if (i==0){
-                    bw.write(line+","+"Divisao");
+                if (iteraction==0){
+                    bw.write(line+","+"Divisao"+lineSep);
                 }else {
+                    String addedColumn = String.valueOf(dados.getDivisao());
                     bw.write(line+","+addedColumn+lineSep);
                 }
-                i++;
+                iteraction++;
             }
         } catch (Exception e) {
             e.printStackTrace();
