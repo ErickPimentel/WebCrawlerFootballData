@@ -7,8 +7,8 @@ public class Main {
 
         List<Dados> lista_alunos = wb.run();
 
-        GerenciadorCSV g = new GerenciadorCSV();
-        g.baixa(lista_alunos);
+//        GerenciadorCSV g = new GerenciadorCSV();
+//        g.baixa(lista_alunos);
 
 
     }

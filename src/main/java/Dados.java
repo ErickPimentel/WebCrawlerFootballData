@@ -3,9 +3,10 @@ public class Dados {
     private String divisao;
     private String season;
 
-    public Dados(String link_csv, String divisao) {
+    public Dados(String link_csv, String divisao, String season) {
         this.link_csv = link_csv;
         this.divisao = divisao;
+        this.season = season;
     }
 
     public String getLink_csv() {
@@ -37,6 +38,7 @@ public class Dados {
         return "Dados{" +
                 "link_csv='" + link_csv + '\'' +
                 ", divisao='" + divisao + '\'' +
+                ", season='" + season + '\'' +
                 '}';
     }
 }

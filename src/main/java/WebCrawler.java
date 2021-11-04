@@ -15,7 +15,6 @@ public class WebCrawler {
         Document document = Jsoup.connect(url).get();
 
         Elements links = document.select("a[href^=mmz]");
-        Elements seasons = document.select("i");
 
 
         String link_csv;
@@ -27,10 +26,13 @@ public class WebCrawler {
 
             link_csv = link.attr("abs:href");
             divisao = link.text();
+            season = link.attr("href").substring(8,12);
 
-            Dados d = new Dados(link_csv, divisao);
+            Dados d = new Dados(link_csv, divisao, season);
             lista_data.add(d);
         }
+
+        System.out.println(lista_data.toString());
 
         return lista_data;
     }
