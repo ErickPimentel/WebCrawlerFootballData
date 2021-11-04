@@ -9,6 +9,7 @@ public class Main {
 
         GerenciadorCSV g = new GerenciadorCSV();
         g.baixa(lista_alunos);
+        
 
     }
 }
