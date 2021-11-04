@@ -9,7 +9,7 @@ public class GerenciadorCSV {
     public void baixa(List<Dados> lista_dados) throws IOException{
         for (Dados dados: lista_dados) {
             URL url = new URL(dados.getLink_csv());
-            String fileName = dados.getLink_csv().substring(40,44) + "_" + dados.getDivisao() + ".csv";
+            String fileName = dados.getLink_csv().substring(40,44) + "_" + dados.getLeague() + ".csv";
             String filePath = "C:\\Users\\Erick\\Desktop\\Dados\\v1\\";
             String fileAbsPath = filePath + fileName;
             File file = new File(fileAbsPath);
@@ -38,7 +38,7 @@ public class GerenciadorCSV {
                 if (iteraction==0){
                     bw.write(line+","+"Divisao"+","+"Season"+lineSep);
                 }else {
-                    String addedColumnDivisao = String.valueOf(dados.getDivisao());
+                    String addedColumnDivisao = String.valueOf(dados.getLeague());
                     String addedColumnSeason = String.valueOf(dados.getSeason());
                     bw.write(line+","+addedColumnDivisao+","+addedColumnSeason+lineSep);
                 }
@@ -52,7 +52,5 @@ public class GerenciadorCSV {
             if(bw!=null)
                 bw.close();
         }
-
-
     }
 }

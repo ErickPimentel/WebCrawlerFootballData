@@ -16,22 +16,31 @@ public class WebCrawler {
 
         Elements links = document.select("a[href^=mmz]");
 
+        Elements b_elements = document.select("b");
+        String country = null;
+        for (Element campo_country: b_elements) {
+            if (campo_country.text().contains("Data Files")){
+                country = campo_country.text().substring(12);
+            }
+        }
 
         String link_csv;
-        String divisao;
+        String league;
         String season;
-        List<Dados> lista_data = new ArrayList<Dados>();
+        List<Dados> lista_dados = new ArrayList<Dados>();
         for (Element link: links) {
 
 
             link_csv = link.attr("abs:href");
-            divisao = link.text();
+            league = link.text();
             season = link.attr("href").substring(8,12);
 
-            Dados d = new Dados(link_csv, divisao, season);
-            lista_data.add(d);
+            Dados d = new Dados(country, link_csv, league, season);
+            lista_dados.add(d);
         }
 
-        return lista_data;
+        System.out.println(lista_dados.toString());
+
+        return lista_dados;
     }
 }

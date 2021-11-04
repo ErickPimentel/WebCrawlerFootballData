@@ -1,11 +1,13 @@
 public class Dados {
     private String link_csv;
-    private String divisao;
+    private String country;
+    private String league;
     private String season;
 
-    public Dados(String link_csv, String divisao, String season) {
+    public Dados(String link_csv, String country, String league, String season) {
         this.link_csv = link_csv;
-        this.divisao = divisao;
+        this.country = country;
+        this.league = league;
         this.season = season;
     }
 
@@ -13,31 +15,27 @@ public class Dados {
         return link_csv;
     }
 
-    public void setLink_csv(String link_csv) {
-        this.link_csv = link_csv;
+    public String getCountry() {
+        return country;
     }
 
-    public String getDivisao() {
-        return divisao;
+    public String getLeague() {
+        return league;
     }
 
-    public void setDivisao(String divisao) {
-        this.divisao = divisao;
-    }
 
     public String getSeason() {
         return season;
     }
 
-    public void setSeason(String season) {
-        this.season = season;
-    }
+
+
 
     @Override
     public String toString() {
         return "Dados{" +
                 "link_csv='" + link_csv + '\'' +
-                ", divisao='" + divisao + '\'' +
+                ", divisao='" + league + '\'' +
                 ", season='" + season + '\'' +
                 '}';
     }
