@@ -11,11 +11,13 @@ public class GerenciadorCSV {
     public static final String COUNTRY = "Country";
     public static final String LEAGUE = "League";
     public static final String SEASON = "Season";
+    public static final String UNDERSCORE = "_";
+    public static final String FORMATO_CSV = ".csv";
 
     public void baixa(List<Dados> lista_dados) throws IOException{
         for (Dados dados: lista_dados) {
             URL url = new URL(dados.getLink_csv());
-            String fileName = dados.getLink_csv().substring(40,44) + "_" + dados.getLeague() + ".csv";
+            String fileName = dados.getCountry() + UNDERSCORE + dados.getLeague() + UNDERSCORE + dados.getLink_csv().substring(40,44) + FORMATO_CSV;
             String filePath = "C:\\Users\\Erick\\Desktop\\Dados\\v1\\";
             String fileAbsPath = filePath + fileName;
             File file = new File(fileAbsPath);
@@ -41,13 +43,11 @@ public class GerenciadorCSV {
             int iteraction = 0;
             for(line = br.readLine(); line != null; line = br.readLine(), i++){
                 if (iteraction==0){
-                    //bw.write(line+ VIRGULA + COUNTRY + VIRGULA + LEAGUE + VIRGULA+ SEASON + LINESEP);
                     bw.write(COUNTRY + VIRGULA + LEAGUE + VIRGULA + SEASON + VIRGULA + line + LINESEP);
                 }else {
                     String addedColumnCountry = String.valueOf(dados.getCountry());
                     String addedColumnLeague = String.valueOf(dados.getLeague());
                     String addedColumnSeason = String.valueOf(dados.getSeason());
-                    //bw.write(line+VIRGULA+addedColumnCountry+VIRGULA+addedColumnLeague+VIRGULA+addedColumnSeason + LINESEP);
                     bw.write(addedColumnCountry + VIRGULA + addedColumnLeague + VIRGULA + addedColumnSeason + VIRGULA + line + LINESEP);
                 }
                 iteraction++;
