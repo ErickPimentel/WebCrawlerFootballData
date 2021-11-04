@@ -6,6 +6,12 @@ import java.util.List;
 
 public class GerenciadorCSV {
 
+    public static final String LINESEP = System.getProperty("line.separator");
+    public static final String VIRGULA = ",";
+    public static final String COUNTRY = "Country";
+    public static final String LEAGUE = "League";
+    public static final String SEASON = "Season";
+
     public void baixa(List<Dados> lista_dados) throws IOException{
         for (Dados dados: lista_dados) {
             URL url = new URL(dados.getLink_csv());
@@ -22,7 +28,6 @@ public class GerenciadorCSV {
     public void adicionaColunas(String filePath, String fileName, Dados dados) throws IOException {
         BufferedReader br = null;
         BufferedWriter bw = null;
-        final String lineSep = System.getProperty("line.separator");
 
         try {
             File file = new File(filePath, fileName);
@@ -36,12 +41,14 @@ public class GerenciadorCSV {
             int iteraction = 0;
             for(line = br.readLine(); line != null; line = br.readLine(), i++){
                 if (iteraction==0){
-                    bw.write(line+","+"Country"+","+"League"+","+"Season"+lineSep);
+                    //bw.write(line+ VIRGULA + COUNTRY + VIRGULA + LEAGUE + VIRGULA+ SEASON + LINESEP);
+                    bw.write(COUNTRY + VIRGULA + LEAGUE + VIRGULA + SEASON + VIRGULA + line + LINESEP);
                 }else {
                     String addedColumnCountry = String.valueOf(dados.getCountry());
                     String addedColumnLeague = String.valueOf(dados.getLeague());
                     String addedColumnSeason = String.valueOf(dados.getSeason());
-                    bw.write(line+","+addedColumnCountry+","+addedColumnLeague+","+addedColumnSeason+lineSep);
+                    //bw.write(line+VIRGULA+addedColumnCountry+VIRGULA+addedColumnLeague+VIRGULA+addedColumnSeason + LINESEP);
+                    bw.write(addedColumnCountry + VIRGULA + addedColumnLeague + VIRGULA + addedColumnSeason + VIRGULA + line + LINESEP);
                 }
                 iteraction++;
             }
