@@ -32,8 +32,6 @@ public class WebCrawler {
             lista_data.add(d);
         }
 
-        System.out.println(lista_data.toString());
-
         return lista_data;
     }
 }

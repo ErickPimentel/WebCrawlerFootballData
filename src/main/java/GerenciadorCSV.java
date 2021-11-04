@@ -36,10 +36,11 @@ public class GerenciadorCSV {
             int iteraction = 0;
             for(line = br.readLine(); line != null; line = br.readLine(), i++){
                 if (iteraction==0){
-                    bw.write(line+","+"Divisao"+lineSep);
+                    bw.write(line+","+"Divisao"+","+"Season"+lineSep);
                 }else {
-                    String addedColumn = String.valueOf(dados.getDivisao());
-                    bw.write(line+","+addedColumn+lineSep);
+                    String addedColumnDivisao = String.valueOf(dados.getDivisao());
+                    String addedColumnSeason = String.valueOf(dados.getSeason());
+                    bw.write(line+","+addedColumnDivisao+","+addedColumnSeason+lineSep);
                 }
                 iteraction++;
             }
