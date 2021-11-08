@@ -9,6 +9,31 @@ import java.util.List;
 
 public class WebCrawler {
 
+    public List<String> busca_link_paises() throws IOException {
+
+        String url = "https://www.football-data.co.uk/";
+
+        Document document = Jsoup.connect(url).get();
+
+        Elements elementos_paises = document.select("body > table > tbody > tr > td > table > tbody > tr > td > div > a");
+
+        List<String> lista_link_paises = new ArrayList<String>();
+        String link_pais;
+        int count = 0;
+        for (Element pais: elementos_paises) {
+            if(count > 37 && count < 60){
+                link_pais = pais.attr("abs:href");
+                if (!lista_link_paises.contains(link_pais)){
+                    lista_link_paises.add(link_pais);
+                }
+            }
+            count++;
+        }
+
+        return lista_link_paises;
+
+    }
+
     public List<Dados> run() throws IOException {
         String url = "https://www.football-data.co.uk/englandm.php";
 
