@@ -7,10 +7,11 @@ public class Main {
 
         List<String> lista_link_paises = wb.busca_link_paises();
 
-        List<Dados> lista_dados = wb.run(lista_link_paises);
+        List<Arquivo> lista_arquivos = wb.run(lista_link_paises);
 
         GerenciadorCSV g = new GerenciadorCSV();
-        g.baixa(lista_dados);
+        g.baixa(lista_arquivos);
+        g.adicionaColunas(lista_arquivos);
 
 
     }

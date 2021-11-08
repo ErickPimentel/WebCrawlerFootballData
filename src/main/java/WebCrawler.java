@@ -34,9 +34,9 @@ public class WebCrawler {
 
     }
 
-    public List<Dados> run(List<String> lista_link_paises) throws IOException {
+    public List<Arquivo> run(List<String> lista_link_paises) throws IOException {
 
-        List<Dados> lista_dados = new ArrayList<Dados>();
+        List<Arquivo> lista_arquivos = new ArrayList<Arquivo>();
         for (String link_pais: lista_link_paises) {
 
             String url = link_pais;
@@ -64,10 +64,10 @@ public class WebCrawler {
                 league = link.text();
                 season = link.attr("href").substring(8,12);
 
-                Dados d = new Dados(link_csv, country, league, season);
-                lista_dados.add(d);
+                Arquivo d = new Arquivo(link_csv, country, league, season);
+                lista_arquivos.add(d);
             }
         }
-        return lista_dados;
+        return lista_arquivos;
     }
 }
