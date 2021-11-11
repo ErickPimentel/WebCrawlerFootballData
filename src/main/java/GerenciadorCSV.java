@@ -21,7 +21,7 @@ public class GerenciadorCSV {
 
             //cria o arquivo
             String fileName = arquivo.getCountry() + UNDERSCORE + arquivo.getLeague() + UNDERSCORE + arquivo.getLink_csv().substring(40,44) + FORMATO_CSV;
-            String filePath = "C:\\Users\\Erick\\Desktop\\Arquivos\\v1\\";
+            String filePath = "C:\\Users\\EPIMENT5\\Desktop\\Arquivos\\v1\\";
 
             arquivo.setFilePath(filePath);
             arquivo.setFileName(fileName);
@@ -45,7 +45,7 @@ public class GerenciadorCSV {
 
             try {
                 File file = new File(arquivo.getFilePath(), arquivo.getFileName());
-                File file2 = new File("C:\\Users\\Erick\\Desktop\\Arquivos\\v2\\", arquivo.getFileName());
+                File file2 = new File("C:\\Users\\EPIMENT5\\Desktop\\Arquivos\\v2\\", arquivo.getFileName());
 
                 br = new BufferedReader(new InputStreamReader(new FileInputStream(file))) ;
                 bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file2)));

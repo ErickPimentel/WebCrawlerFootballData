@@ -13,6 +13,10 @@ public class Arquivo {
         this.season = season;
     }
 
+    public Arquivo(String link_csv) {
+        this.link_csv = link_csv;
+    }
+
     public String getLink_csv() {
         return link_csv;
     }
