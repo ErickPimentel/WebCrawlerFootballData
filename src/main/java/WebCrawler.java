@@ -98,7 +98,5 @@ public class WebCrawler {
             }
 
         }
-    System.out.println(lista_arquivos_paises_principais.toString());
-    System.out.println(lista_arquivos_paises_secundarios.toString());
     }
 }

@@ -15,6 +15,8 @@ public class Main {
         g.baixa_paises_primarios(lista_arquivos_paises_principais);
         g.adicionaColunas(lista_arquivos_paises_principais);
 
+        g.baixa_paises_secundarios(lista_arquivos_paises_secundarios);
+
 
     }
 }

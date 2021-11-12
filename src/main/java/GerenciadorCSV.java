@@ -13,15 +13,15 @@ public class GerenciadorCSV {
     public static final String SEASON = "Season";
     public static final String UNDERSCORE = "_";
     public static final String FORMATO_CSV = ".csv";
+    public static final String FILE_PATH_PASTA_V1 = "C:\\Users\\EPIMENT5\\Desktop\\Arquivos\\v1\\";
+    public static final String FILE_PATH_PASTA_V2 = "C:\\Users\\EPIMENT5\\Desktop\\Arquivos\\v2\\";
 
     public void baixa_paises_primarios(List<Arquivo> lista_arquivos) throws IOException{
         for (Arquivo arquivo : lista_arquivos) {
-            //pega a URL do csv
             URL url = new URL(arquivo.getLink_csv());
 
-            //cria o arquivo
             String fileName = arquivo.getCountry() + UNDERSCORE + arquivo.getLeague() + UNDERSCORE + arquivo.getLink_csv().substring(40,44) + FORMATO_CSV;
-            String filePath = "C:\\Users\\EPIMENT5\\Desktop\\Arquivos\\v1\\";
+            String filePath = FILE_PATH_PASTA_V1;
 
             arquivo.setFilePath(filePath);
             arquivo.setFileName(fileName);
@@ -29,11 +29,27 @@ public class GerenciadorCSV {
             String fileAbsPath = filePath + fileName;
             File file = new File(fileAbsPath);
 
-            //copia o conteudo da URL para o arquivo csv
             FileUtils.copyURLToFile(url, file);
-
-            //adicionaColunas(filePath, fileName, arquivo);
         }
+    }
+
+    public void baixa_paises_secundarios(List<Arquivo> lista_arquivos)throws IOException{
+        for (Arquivo arquivo : lista_arquivos) {
+
+            URL url = new URL(arquivo.getLink_csv());
+
+            String fileName = arquivo.getLink_csv().substring(36, 39) + FORMATO_CSV;
+            String filePath = FILE_PATH_PASTA_V2;
+
+            arquivo.setFilePath(filePath);
+            arquivo.setFileName(fileName);
+
+            String fileAbsPath = filePath + fileName;
+            File file = new File(fileAbsPath);
+
+            FileUtils.copyURLToFile(url, file);
+        }
+
     }
 
     public void adicionaColunas(List<Arquivo> lista_arquivos) throws IOException {
@@ -45,7 +61,7 @@ public class GerenciadorCSV {
 
             try {
                 File file = new File(arquivo.getFilePath(), arquivo.getFileName());
-                File file2 = new File("C:\\Users\\EPIMENT5\\Desktop\\Arquivos\\v2\\", arquivo.getFileName());
+                File file2 = new File(FILE_PATH_PASTA_V2, arquivo.getFileName());
 
                 br = new BufferedReader(new InputStreamReader(new FileInputStream(file))) ;
                 bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file2)));
