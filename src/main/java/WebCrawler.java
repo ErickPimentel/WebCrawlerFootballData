@@ -15,6 +15,14 @@ public class WebCrawler {
     private List<Arquivo> lista_arquivos_paises_principais = new ArrayList<Arquivo>();
     private List<Arquivo> lista_arquivos_paises_secundarios = new ArrayList<Arquivo>();
 
+    public List<Arquivo> getLista_arquivos_paises_principais() {
+        return lista_arquivos_paises_principais;
+    }
+
+    public List<Arquivo> getLista_arquivos_paises_secundarios() {
+        return lista_arquivos_paises_secundarios;
+    }
+
     public void busca_link_paises() throws IOException {
 
         String url = "https://www.football-data.co.uk/";
@@ -92,6 +100,5 @@ public class WebCrawler {
         }
     System.out.println(lista_arquivos_paises_principais.toString());
     System.out.println(lista_arquivos_paises_secundarios.toString());
-
     }
 }

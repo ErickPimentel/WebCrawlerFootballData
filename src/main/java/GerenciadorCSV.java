@@ -14,7 +14,7 @@ public class GerenciadorCSV {
     public static final String UNDERSCORE = "_";
     public static final String FORMATO_CSV = ".csv";
 
-    public void baixa(List<Arquivo> lista_arquivos) throws IOException{
+    public void baixa_paises_primarios(List<Arquivo> lista_arquivos) throws IOException{
         for (Arquivo arquivo : lista_arquivos) {
             //pega a URL do csv
             URL url = new URL(arquivo.getLink_csv());
