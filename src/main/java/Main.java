@@ -13,7 +13,7 @@ public class Main {
 
         GerenciadorCSV g = new GerenciadorCSV();
         g.baixa_paises_primarios(lista_arquivos_paises_principais);
-        g.adicionaColunas(lista_arquivos_paises_principais);
+        g.adicionaColunas_paises_principais(lista_arquivos_paises_principais);
 
         g.baixa_paises_secundarios(lista_arquivos_paises_secundarios);
 

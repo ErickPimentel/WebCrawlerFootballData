@@ -10,7 +10,8 @@ public class GerenciadorCSV {
     public static final String VIRGULA = ",";
     public static final String COUNTRY = "Country";
     public static final String LEAGUE = "League";
-    public static final String SEASON = "Season";
+    public static final String INICIO_SEASON = "Inicio Season";
+    public static final String FIM_SEASON = "Fim Season";
     public static final String UNDERSCORE = "_";
     public static final String FORMATO_CSV = ".csv";
     public static final String FILE_PATH_PASTA_V1 = "C:\\Users\\EPIMENT5\\Desktop\\Arquivos\\v1\\";
@@ -52,7 +53,7 @@ public class GerenciadorCSV {
 
     }
 
-    public void adicionaColunas(List<Arquivo> lista_arquivos) throws IOException {
+    public void adicionaColunas_paises_principais(List<Arquivo> lista_arquivos) throws IOException {
 
         for (Arquivo arquivo : lista_arquivos) {
 
@@ -66,17 +67,18 @@ public class GerenciadorCSV {
                 br = new BufferedReader(new InputStreamReader(new FileInputStream(file))) ;
                 bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file2)));
 
-                String line = null;
+                String line;
                 int i = 0;
                 int iteraction = 0;
                 for(line = br.readLine(); line != null; line = br.readLine(), i++){
                     if (iteraction==0){
-                        bw.write(COUNTRY + VIRGULA + LEAGUE + VIRGULA + SEASON + VIRGULA + line + LINESEP);
+                        bw.write(COUNTRY + VIRGULA + LEAGUE + VIRGULA + INICIO_SEASON + VIRGULA + FIM_SEASON + VIRGULA + line + LINESEP);
                     }else {
-                        String addedColumnCountry = String.valueOf(arquivo.getCountry());
-                        String addedColumnLeague = String.valueOf(arquivo.getLeague());
-                        String addedColumnSeason = String.valueOf(arquivo.getSeason());
-                        bw.write(addedColumnCountry + VIRGULA + addedColumnLeague + VIRGULA + addedColumnSeason + VIRGULA + line + LINESEP);
+                        String addedColumnCountry = arquivo.getCountry();
+                        String addedColumnLeague = arquivo.getLeague();
+                        String addedColumnInicioSeason = arquivo.getInicio_season();
+                        String addedColumnFimSeason = arquivo.getFim_season();
+                        bw.write(addedColumnCountry + VIRGULA + addedColumnLeague + VIRGULA + addedColumnInicioSeason + VIRGULA + addedColumnFimSeason + VIRGULA + line + LINESEP);
                     }
                     iteraction++;
                 }
