@@ -78,7 +78,10 @@ public class WebCrawler {
                 league = link.text();
                 season = link.attr("href").substring(8, 12);
 
-                Arquivo d = new Arquivo(link_csv, country, league, season);
+                String inicio_season = converteSeasonSubstring(season.substring(0, 2));
+                String fim_season = converteSeasonSubstring(season.substring(2, 4));
+
+                Arquivo d = new Arquivo(link_csv, country, league, season, inicio_season, fim_season);
                 lista_arquivos_paises_principais.add(d);
             }
         }
@@ -96,7 +99,14 @@ public class WebCrawler {
                     lista_arquivos_paises_secundarios.add(d);
                 }
             }
-
         }
+        System.out.println(lista_arquivos_paises_principais);
+    }
+
+    public String converteSeasonSubstring(String season_substring){
+        if (Integer.parseInt(season_substring) < 30){
+            return "20" + season_substring;
+        }
+        return "19" + season_substring;
     }
 }
