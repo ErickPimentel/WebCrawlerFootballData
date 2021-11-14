@@ -1,4 +1,8 @@
-interface Constantes {
+package Constantes;
+
+public interface ConstantesGerenciadorCSV {
+
+    //Classe GerenciadorCSV
     String LINESEP = System.getProperty("line.separator");
     String V = ",";
     String COUNTRY = "Country";
@@ -10,4 +14,6 @@ interface Constantes {
     String FORMATO_CSV = ".csv";
     String FILE_PATH_PASTA_V1 = "C:\\Users\\EPIMENT5\\Desktop\\Arquivos\\v1\\";
     String FILE_PATH_PASTA_V2 = "C:\\Users\\EPIMENT5\\Desktop\\Arquivos\\v2\\";
+
+
 }

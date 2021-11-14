@@ -5,6 +5,7 @@ import java.io.*;
 import java.net.URL;
 import java.util.List;
 
+import static Constantes.ConstantesGerenciadorCSV.*;
 import static Util.SeasonUtil.converteSeasonSubstringPaisesSecundarios;
 
 public class GerenciadorCSV {
@@ -13,8 +14,8 @@ public class GerenciadorCSV {
         for (Arquivo arquivo : lista_arquivos) {
 
             URL url = new URL(arquivo.getLink_csv());
-            String fileName = arquivo.getCountry() + Constantes.UNDERSCORE + arquivo.getLeague() + Constantes.UNDERSCORE + arquivo.getLink_csv().substring(40,44) + Constantes.FORMATO_CSV;
-            String filePath = Constantes.FILE_PATH_PASTA_V1;
+            String fileName = arquivo.getCountry() + UNDERSCORE + arquivo.getLeague() + UNDERSCORE + arquivo.getLink_csv().substring(40,44) + FORMATO_CSV;
+            String filePath = FILE_PATH_PASTA_V1;
 
             File file = criaArquivo(arquivo, fileName, filePath);
             copiaUrlParaArquivo(url, file);
@@ -25,8 +26,8 @@ public class GerenciadorCSV {
         for (Arquivo arquivo : lista_arquivos) {
 
             URL url = new URL(arquivo.getLink_csv());
-            String fileName = arquivo.getLink_csv().substring(36, 39) + Constantes.FORMATO_CSV;
-            String filePath = Constantes.FILE_PATH_PASTA_V1;
+            String fileName = arquivo.getLink_csv().substring(36, 39) + FORMATO_CSV;
+            String filePath = FILE_PATH_PASTA_V1;
 
             File file = criaArquivo(arquivo, fileName, filePath);
             copiaUrlParaArquivo(url, file);
@@ -54,16 +55,16 @@ public class GerenciadorCSV {
             try {
 
                 br = new BufferedReader(new InputStreamReader(new FileInputStream(new File(arquivo.getFilePath(), arquivo.getFileName())))) ;
-                bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File(Constantes.FILE_PATH_PASTA_V2, arquivo.getFileName()))));
+                bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File(FILE_PATH_PASTA_V2, arquivo.getFileName()))));
 
                 String line;
                 int i = 0;
                 int iteraction = 0;
                 for(line = br.readLine(); line != null; line = br.readLine(), i++){
                     if (iteraction==0){
-                        bw.write(Constantes.COUNTRY + Constantes.V + Constantes.LEAGUE + Constantes.V + Constantes.INICIO_SEASON + Constantes.V + Constantes.FIM_SEASON + Constantes.V + line + Constantes.LINESEP);
+                        bw.write(COUNTRY + V + LEAGUE + V + INICIO_SEASON + V + FIM_SEASON + V + line + LINESEP);
                     }else {
-                        bw.write(arquivo.getCountry() + Constantes.V + arquivo.getLeague() + Constantes.V + arquivo.getInicio_season() + Constantes.V + arquivo.getFim_season() + Constantes.V + line + Constantes.LINESEP);
+                        bw.write(arquivo.getCountry() + V + arquivo.getLeague() + V + arquivo.getInicio_season() + V + arquivo.getFim_season() + V + line + LINESEP);
                     }
                     iteraction++;
                 }
@@ -86,22 +87,22 @@ public class GerenciadorCSV {
             try {
 
                 br = new BufferedReader(new InputStreamReader(new FileInputStream(new File(arquivo.getFilePath(), arquivo.getFileName())))) ;
-                bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File(Constantes.FILE_PATH_PASTA_V2, arquivo.getFileName()))));
+                bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File(FILE_PATH_PASTA_V2, arquivo.getFileName()))));
 
                 String line;
                 int i = 0;
                 int iteraction = 0;
                 for(line = br.readLine(); line != null; line = br.readLine(), i++){
                     if (iteraction == 0){
-                        bw.write(Constantes.COLUNAS_PAISES_SECUNDARIOS);
+                        bw.write(COLUNAS_PAISES_SECUNDARIOS);
                     }else {
-                        String[] j = line.split(Constantes.V);
+                        String[] j = line.split(V);
                         Jogo jogo = new Jogo(j[0],j[1],j[2],j[3],j[4],j[5],j[6],j[7],j[8],j[9],j[10],j[11],j[12],j[13],j[14],j[15],j[16],j[17],j[18]);
                         SeasonUtil seasonUtil = converteSeasonSubstringPaisesSecundarios(j[2]);
                         jogo.setInicio_season(seasonUtil.getInicio_season());
                         jogo.setFim_season(seasonUtil.getFim_season());
-                        bw.write(jogo.getCountry()+ Constantes.V+jogo.getLeague()+ Constantes.V+jogo.getInicio_season()+ Constantes.V+jogo.getFim_season()+ Constantes.V+jogo.getDate()+ Constantes.V+jogo.getTime()+ Constantes.V+jogo.getHome()+ Constantes.V+jogo.getAway()+ Constantes.V+
-                                jogo.getHg()+ Constantes.V+jogo.getAg()+ Constantes.V+jogo.getRes()+ Constantes.V+jogo.getPh()+ Constantes.V+jogo.getPd()+ Constantes.V+jogo.getPa()+ Constantes.V+jogo.getMaxh()+ Constantes.V+jogo.getMaxd()+ Constantes.V+jogo.getMaxa()+ Constantes.V+jogo.getAvgh()+ Constantes.V+jogo.getAvgd()+ Constantes.V+jogo.getAvga() + Constantes.LINESEP);
+                        bw.write(jogo.getCountry()+ V+jogo.getLeague()+ V+jogo.getInicio_season()+ V+jogo.getFim_season()+ V+jogo.getDate()+ V+jogo.getTime()+ V+jogo.getHome()+ V+jogo.getAway()+ V+
+                                jogo.getHg()+ V+jogo.getAg()+ V+jogo.getRes()+ V+jogo.getPh()+ V+jogo.getPd()+ V+jogo.getPa()+ V+jogo.getMaxh()+ V+jogo.getMaxd()+ V+jogo.getMaxa()+ V+jogo.getAvgh()+ V+jogo.getAvgd()+ V+jogo.getAvga() + LINESEP);
                     }
                     iteraction++;
                 }
