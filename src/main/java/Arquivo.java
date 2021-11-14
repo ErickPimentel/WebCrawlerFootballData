@@ -21,6 +21,12 @@ public class Arquivo {
         this.link_csv = link_csv;
     }
 
+    public Arquivo(String link_csv, String filePath, String fileName) {
+        this.link_csv = link_csv;
+        this.filePath = filePath;
+        this.fileName = fileName;
+    }
+
     public String getLink_csv() {
         return link_csv;
     }

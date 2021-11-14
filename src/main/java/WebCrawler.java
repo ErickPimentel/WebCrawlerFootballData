@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import static Util.SeasonUtil.converteSeasonSubstringPaisesPrimarios;
+
 public class WebCrawler {
 
     private List<String> lista_link_paises_principais = new ArrayList<String>();
@@ -23,7 +25,7 @@ public class WebCrawler {
         return lista_arquivos_paises_secundarios;
     }
 
-    public void busca_link_paises() throws IOException {
+    public void buscaLinkPaises() throws IOException {
 
         String url = "https://www.football-data.co.uk/";
 
@@ -52,7 +54,7 @@ public class WebCrawler {
 
     }
 
-    public void run() throws IOException {
+    public void runPaisesPrincipais() throws IOException {
 
         for (String link_pais : lista_link_paises_principais) {
             String url = link_pais;
@@ -78,14 +80,16 @@ public class WebCrawler {
                 league = link.text();
                 season = link.attr("href").substring(8, 12);
 
-                String inicio_season = converteSeasonSubstring(season.substring(0, 2));
-                String fim_season = converteSeasonSubstring(season.substring(2, 4));
+                String inicio_season = converteSeasonSubstringPaisesPrimarios(season.substring(0, 2));
+                String fim_season = converteSeasonSubstringPaisesPrimarios(season.substring(2, 4));
 
                 Arquivo d = new Arquivo(link_csv, country, league, season, inicio_season, fim_season);
                 lista_arquivos_paises_principais.add(d);
             }
         }
+    }
 
+    public void runPaisesSecundarios() throws IOException {
         for (String link_pais : lista_link_paises_secundarios) {
             String url = link_pais;
             Document document = Jsoup.connect(url).get();
@@ -100,13 +104,5 @@ public class WebCrawler {
                 }
             }
         }
-        System.out.println(lista_arquivos_paises_principais);
-    }
-
-    public String converteSeasonSubstring(String season_substring){
-        if (Integer.parseInt(season_substring) < 30){
-            return "20" + season_substring;
-        }
-        return "19" + season_substring;
     }
 }
