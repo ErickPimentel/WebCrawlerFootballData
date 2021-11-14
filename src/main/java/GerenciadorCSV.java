@@ -50,7 +50,6 @@ public class GerenciadorCSV {
             File file = new File(fileAbsPath);
 
             FileUtils.copyURLToFile(url, file);
-            System.out.println(arquivo);
         }
 
     }
