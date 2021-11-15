@@ -6,19 +6,33 @@ public class Main {
     public static void main(String[] args) throws IOException {
         WebCrawler wb = new WebCrawler();
 
+        System.out.println("buscaLinkPaises");
         wb.buscaLinkPaises();
+
+        System.out.println("runPaisesPrincipais");
         wb.runPaisesPrincipais();
+
+        System.out.println("runPaisesSecundarios");
         wb.runPaisesSecundarios();
 
+        System.out.println("getLista_arquivos_paises_principais");
         List<Arquivo> lista_arquivos_paises_principais = wb.getLista_arquivos_paises_principais();
+
+        System.out.println("getLista_arquivos_paises_secundarios");
         List<Arquivo> lista_arquivos_paises_secundarios = wb.getLista_arquivos_paises_secundarios();
 
         GerenciadorCSV g = new GerenciadorCSV();
+
+        System.out.println("baixaPaisesPrimarios");
         g.baixaPaisesPrimarios(lista_arquivos_paises_principais);
+
+        System.out.println("adicionaColunasPaisesPrincipais");
         g.adicionaColunasPaisesPrincipais(lista_arquivos_paises_principais);
 
+        System.out.println("baixaPaisesSecundarios");
         g.baixaPaisesSecundarios(lista_arquivos_paises_secundarios);
 
+        System.out.println("adicionaColunasPaisesSecundarios");
         g.adicionaColunasPaisesSecundarios(lista_arquivos_paises_secundarios);
 
 
