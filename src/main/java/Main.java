@@ -35,6 +35,8 @@ public class Main {
         System.out.println("adicionaColunasPaisesSecundarios");
         g.adicionaColunasPaisesSecundarios(lista_arquivos_paises_secundarios);
 
+        System.out.println("FIM");
+
 
     }
 }
