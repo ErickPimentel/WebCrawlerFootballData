@@ -10,6 +10,7 @@ import static Util.SeasonUtil.converteSeasonSubstringPaisesSecundarios;
 
 public class GerenciadorCSV {
 
+    //pensar em refatorar
     public void baixaPaisesPrimarios(List<Arquivo> lista_arquivos) throws IOException{
         for (Arquivo arquivo : lista_arquivos) {
 
@@ -57,6 +58,8 @@ public class GerenciadorCSV {
                 br = new BufferedReader(new InputStreamReader(new FileInputStream(new File(arquivo.getFilePath(), arquivo.getFileName())))) ;
                 bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File(FILE_PATH_PASTA_V2, arquivo.getFileName()))));
 
+                arquivo.setFilePath(FILE_PATH_PASTA_V2);
+
                 String line;
                 int i = 0;
                 int iteraction = 0;
@@ -89,6 +92,8 @@ public class GerenciadorCSV {
                 br = new BufferedReader(new InputStreamReader(new FileInputStream(new File(arquivo.getFilePath(), arquivo.getFileName())))) ;
                 bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File(FILE_PATH_PASTA_V2, arquivo.getFileName()))));
 
+                arquivo.setFilePath(FILE_PATH_PASTA_V2);
+
                 String line;
                 int i = 0;
                 int iteraction = 0;
@@ -97,12 +102,10 @@ public class GerenciadorCSV {
                         bw.write(COLUNAS_PAISES_SECUNDARIOS);
                     }else {
                         String[] j = line.split(V);
-                        Jogo jogo = new Jogo(j[0],j[1],j[2],j[3],j[4],j[5],j[6],j[7],j[8],j[9],j[10],j[11],j[12],j[13],j[14],j[15],j[16],j[17],j[18]);
                         SeasonUtil seasonUtil = converteSeasonSubstringPaisesSecundarios(j[2]);
-                        jogo.setInicio_season(seasonUtil.getInicio_season());
-                        jogo.setFim_season(seasonUtil.getFim_season());
-                        bw.write(jogo.getCountry()+ V+jogo.getLeague()+ V+jogo.getInicio_season()+ V+jogo.getFim_season()+ V+jogo.getDate()+ V+jogo.getTime()+ V+jogo.getHome()+ V+jogo.getAway()+ V+
-                                jogo.getHg()+ V+jogo.getAg()+ V+jogo.getRes()+ V+jogo.getPh()+ V+jogo.getPd()+ V+jogo.getPa()+ V+jogo.getMaxh()+ V+jogo.getMaxd()+ V+jogo.getMaxa()+ V+jogo.getAvgh()+ V+jogo.getAvgd()+ V+jogo.getAvga() + LINESEP);
+                        String inicio_season = seasonUtil.getInicio_season();
+                        String fim_season = seasonUtil.getFim_season();
+                        bw.write(j[0]+ V+j[1]+ V+inicio_season+ V+fim_season+ V+j[3]+ V+j[4]+ V+j[5]+ V+j[6]+ V+j[7]+ V+j[8]+ V+j[9]+ V+j[10]+ V+j[11]+ V+j[12]+ V+j[13]+ V+j[14]+ V+j[15]+ V+j[16]+ V+j[17]+ V+j[18] + LINESEP);
                     }
                     iteraction++;
                 }
