@@ -14,6 +14,8 @@ public interface ConstantesGerenciadorCSV {
     String FORMATO_CSV = ".csv";
     String FILE_PATH_PASTA_V1 = "C:\\Users\\EPIMENT5\\Desktop\\Arquivos\\v1\\";
     String FILE_PATH_PASTA_V2 = "C:\\Users\\EPIMENT5\\Desktop\\Arquivos\\v2\\";
+    String FILE_PATH_PASTA_V3 = "C:\\Users\\EPIMENT5\\Desktop\\Arquivos\\v3\\";
+    String PAISES_SECUNDARIOS = "PaisesSecundarios";
 
 
 }

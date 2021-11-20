@@ -1,5 +1,4 @@
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
@@ -34,6 +33,9 @@ public class Main {
 
         System.out.println("adicionaColunasPaisesSecundarios");
         g.adicionaColunasPaisesSecundarios(lista_arquivos_paises_secundarios);
+
+        //Todos os CSVs dos paises secundarios para um CSV de paises secundarios
+        g.allCSVtoOneCSV(lista_arquivos_paises_secundarios);
     }
 }
 

@@ -113,4 +113,34 @@ public class GerenciadorCSV {
             }
         }
     }
+
+    public void allCSVtoOneCSV(List<Arquivo> lista_arquivos) throws IOException {
+
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File(FILE_PATH_PASTA_V3, PAISES_SECUNDARIOS + FORMATO_CSV))));
+
+       for (Arquivo arquivo: lista_arquivos){
+           BufferedReader br = null;
+
+           try {
+
+               br = new BufferedReader(new InputStreamReader(new FileInputStream(new File(arquivo.getFilePath(), arquivo.getFileName()))));
+
+               int iteraction = 0;
+               String line;
+               int i = 0;
+               for(line = br.readLine(); line != null; line = br.readLine(), i++){
+                   if (iteraction != 0){
+                       bw.write(line + LINESEP);
+                   }
+                   iteraction++;
+               }
+           }catch (ArrayIndexOutOfBoundsException ignored){
+           }finally {
+               if (br != null) br.close();
+           }
+       }
+
+       bw.close();
+
+    }
 }
