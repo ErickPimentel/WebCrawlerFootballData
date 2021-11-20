@@ -13,26 +13,24 @@ public class GerenciadorCSV {
     //pensar em refatorar
     public void baixaPaisesPrimarios(List<Arquivo> lista_arquivos) throws IOException{
         for (Arquivo arquivo : lista_arquivos) {
-
-            URL url = new URL(arquivo.getLink_csv());
-            String fileName = arquivo.getCountry() + UNDERSCORE + arquivo.getLeague() + UNDERSCORE + arquivo.getLink_csv().substring(40,44) + FORMATO_CSV;
-            String filePath = FILE_PATH_PASTA_V1;
-
-            File file = criaArquivo(arquivo, fileName, filePath);
-            copiaUrlParaArquivo(url, file);
+            copiaUrlParaArquivo(arquivo,
+                    arquivo.getCountry() + UNDERSCORE + arquivo.getLeague() + UNDERSCORE + arquivo.getLink_csv().substring(40,44) + FORMATO_CSV,
+                    FILE_PATH_PASTA_V1);
         }
     }
 
     public void baixaPaisesSecundarios(List<Arquivo> lista_arquivos)throws IOException{
         for (Arquivo arquivo : lista_arquivos) {
-
-            URL url = new URL(arquivo.getLink_csv());
-            String fileName = arquivo.getLink_csv().substring(36, 39) + FORMATO_CSV;
-            String filePath = FILE_PATH_PASTA_V1;
-
-            File file = criaArquivo(arquivo, fileName, filePath);
-            copiaUrlParaArquivo(url, file);
+            copiaUrlParaArquivo(arquivo,
+                    arquivo.getLink_csv().substring(36, 39) + FORMATO_CSV,
+                    FILE_PATH_PASTA_V1);
         }
+    }
+
+    private void copiaUrlParaArquivo(Arquivo arquivo, String fileName, String filePath) throws IOException {
+        URL url = new URL(arquivo.getLink_csv());
+        File file = criaArquivo(arquivo, fileName, filePath);
+        FileUtils.copyURLToFile(url, file);
     }
 
     private File criaArquivo(Arquivo arquivo, String fileName, String filePath) {
@@ -42,9 +40,7 @@ public class GerenciadorCSV {
         return new File(fileAbsPath);
     }
 
-    private void copiaUrlParaArquivo(URL url, File file) throws IOException {
-        FileUtils.copyURLToFile(url, file);
-    }
+
 
     public void adicionaColunasPaisesPrincipais(List<Arquivo> lista_arquivos) throws IOException {
 
