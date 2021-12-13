@@ -1,3 +1,5 @@
+package Model;
+
 public class Arquivo {
     private String link_csv;
     private String country;
@@ -70,7 +72,7 @@ public class Arquivo {
 
     @Override
     public String toString() {
-        return "Arquivo{" +
+        return "Model.Arquivo{" +
                 "link_csv='" + link_csv + '\'' +
                 ", country='" + country + '\'' +
                 ", league='" + league + '\'' +

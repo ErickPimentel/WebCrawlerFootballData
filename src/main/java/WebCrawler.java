@@ -1,3 +1,4 @@
+import Model.Arquivo;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -35,9 +36,9 @@ public class WebCrawler {
         int count = 0;
         for (Element pais : elementos_paises) {
 
-            buscaLinkPaises(count, pais, 37, 60, lista_link_paises_principais);
+            buscaLinkPaises(count, pais, 37, 58, lista_link_paises_principais);
 
-            buscaLinkPaises(count, pais, 62, 94, lista_link_paises_secundarios);
+            buscaLinkPaises(count, pais, 62, 92, lista_link_paises_secundarios);
             count++;
         }
 
@@ -70,6 +71,8 @@ public class WebCrawler {
                 String season = buscaSeason(link);
                 String inicio_season = buscaInicioOuFimSeason(season, 0, 2);
                 String fim_season = buscaInicioOuFimSeason(season, 2, 4);
+
+                System.out.println(link_csv);
 
                 Arquivo d = new Arquivo(link_csv, country, league, season, inicio_season, fim_season);
                 lista_arquivos_paises_principais.add(d);
@@ -113,6 +116,7 @@ public class WebCrawler {
             for (Element link : links) {
                 if (link.text().contains(CSV_CONTAINS)) {
                     link_csv = link.attr(HREF_ABSOLUTO);
+                    System.out.println(link_csv);
                     Arquivo d = new Arquivo(link_csv);
                     lista_arquivos_paises_secundarios.add(d);
                 }

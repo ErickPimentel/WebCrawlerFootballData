@@ -1,6 +1,6 @@
 package Constantes;
 
-public interface ConstantesGerenciadorCSV {
+public interface ConstantesGerenciadorArquivo {
 
     //Classe GerenciadorCSV
     String LINESEP = System.getProperty("line.separator");
