@@ -36,9 +36,9 @@ public class WebCrawler {
         int count = 0;
         for (Element pais : elementos_paises) {
 
-            buscaLinkPaises(count, pais, 37, 58, lista_link_paises_principais);
+            buscaLinkPaises(count, pais, 37, 56, lista_link_paises_principais);
 
-            buscaLinkPaises(count, pais, 62, 92, lista_link_paises_secundarios);
+            buscaLinkPaises(count, pais, 62, 90, lista_link_paises_secundarios);
             count++;
         }
 

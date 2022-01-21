@@ -1,24 +1,22 @@
 <component name="libraryTable">
-  <library name="commons-io-2.11.0-javadoc">
+  <library name="json-simple-1.1.11">
     <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../libraries/JSONArray/json-simple-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../libraries/Jsoup/jsoup-1.14.3.jar!/" />
       <root url="jar://$PROJECT_DIR$/../libraries/CommonsIO/commons-io-2.11.0-tests.jar!/" />
       <root url="jar://$PROJECT_DIR$/../libraries/CommonsIO/commons-io-2.11.0.jar!/" />
-      <root url="file://$PROJECT_DIR$/../libraries/CommonsIO" />
-      <root url="jar://$PROJECT_DIR$/../libraries/Fasterxml/jackson-annotations-2.9.0.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../libraries/Fasterxml/jackson-core-2.9.0.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../libraries/Fasterxml/jackson-databind-2.9.0.jar!/" />
       <root url="jar://$PROJECT_DIR$/../libraries/Fasterxml/jackson-dataformat-csv-2.9.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../libraries/Fasterxml/jackson-databind-2.9.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../libraries/Fasterxml/jackson-core-2.9.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../libraries/Fasterxml/jackson-annotations-2.9.0.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$PROJECT_DIR$/../libraries/CommonsIO/commons-io-2.11.0-javadoc.jar!/" />
-      <root url="file://$PROJECT_DIR$/../libraries/CommonsIO/docs" />
     </JAVADOC>
     <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../libraries/Jsoup/jsoup-1.14.3-sources.jar!/" />
       <root url="jar://$PROJECT_DIR$/../libraries/CommonsIO/commons-io-2.11.0-sources.jar!/" />
       <root url="jar://$PROJECT_DIR$/../libraries/CommonsIO/commons-io-2.11.0-test-sources.jar!/" />
-      <root url="file://$PROJECT_DIR$/../libraries/CommonsIO" />
     </SOURCES>
-    <jarDirectory url="file://$PROJECT_DIR$/../libraries/CommonsIO" recursive="false" />
-    <jarDirectory url="file://$PROJECT_DIR$/../libraries/CommonsIO" recursive="false" type="SOURCES" />
   </library>
 </component>

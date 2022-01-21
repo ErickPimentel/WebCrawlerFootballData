@@ -1,5 +1,6 @@
 import Model.Arquivo;
 import Util.SeasonUtil;
+import com.fasterxml.jackson.dataformat.csv.CsvMappingException;
 import org.apache.commons.io.FileUtils;
 
 import java.io.*;
@@ -126,8 +127,13 @@ public class GerenciadorCSV {
             File input = new File(FILE_PATH_PASTA_V2, arquivo.getFileName() + FORMATO_CSV);
             File output = new File(FILE_PATH_PASTA_V3, arquivo.getFileName() + FORMATO_JSON);
 
-            List<Map<?, ?>> data = readObjectsFromCsv(input);
-            writeAsJson(data, output);
+
+            try {
+                List<Map<?, ?>> data = readObjectsFromCsv(input);
+                writeAsJson(data, output);
+            }catch (CsvMappingException e){
+                System.out.println("Empty header line: can not bind data");
+            }
         }
     }
 

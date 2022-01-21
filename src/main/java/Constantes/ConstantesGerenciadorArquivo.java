@@ -13,9 +13,9 @@ public interface ConstantesGerenciadorArquivo {
     String UNDERSCORE = "_";
     String FORMATO_CSV = ".csv";
     String FORMATO_JSON = ".json";
-    String FILE_PATH_PASTA_V1 = "C:\\Users\\EPIMENT5\\Desktop\\Arquivos\\v1\\";
-    String FILE_PATH_PASTA_V2 = "C:\\Users\\EPIMENT5\\Desktop\\Arquivos\\v2\\";
-    String FILE_PATH_PASTA_V3 = "C:\\Users\\EPIMENT5\\Desktop\\Arquivos\\v3\\";
+    String FILE_PATH_PASTA_V1 = "C:\\Users\\Erick\\Desktop\\Arquivos\\v1\\";
+    String FILE_PATH_PASTA_V2 = "C:\\Users\\Erick\\Desktop\\Arquivos\\v2\\";
+    String FILE_PATH_PASTA_V3 = "C:\\Users\\Erick\\Desktop\\Arquivos\\v3\\";
     String PAISES_SECUNDARIOS = "PaisesSecundarios";
     String PAISES_PRINCIPAIS = "PaisesPrincipais";
 
