@@ -38,7 +38,7 @@ public class WebCrawler {
 
             buscaLinkPaises(count, pais, 37, 56, lista_link_paises_principais);
 
-            buscaLinkPaises(count, pais, 62, 90, lista_link_paises_secundarios);
+            buscaLinkPaises(count, pais, 58, 90, lista_link_paises_secundarios);
             count++;
         }
 
