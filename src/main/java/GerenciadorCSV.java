@@ -66,9 +66,13 @@ public class GerenciadorCSV {
                 int iteraction = 0;
                 for(line = br.readLine(); line != null; line = br.readLine(), i++){
                     if (iteraction==0){
-                        bw.write((COUNTRY + V + LEAGUE + V + INICIO_SEASON + V + FIM_SEASON + V + line + LINESEP).replaceAll("\\.", "").replaceAll(">", ""));
+                        bw.write((COUNTRY + V + LEAGUE + V + START_SEASON + V + END_SEASON + V + line + LINESEP).replaceAll("\\.", "")
+                                .replace("PSH", "PH")
+                                .replace("PSD", "PD")
+                                .replace("PSA", "PA")
+                        );
                     }else {
-                        bw.write((arquivo.getCountry() + V + arquivo.getLeague() + V + arquivo.getInicio_season() + V + arquivo.getFim_season() + V + line + LINESEP));
+                        bw.write((arquivo.getCountry() + V + arquivo.getLeague() + V + arquivo.getInicio_season() + V + arquivo.getFim_season() + V + line + LINESEP).replaceAll(" ", ""));
                     }
                     iteraction++;
                 }
@@ -100,13 +104,19 @@ public class GerenciadorCSV {
                 int iteraction = 0;
                 for(line = br.readLine(); line != null; line = br.readLine(), i++){
                     if (iteraction == 0){
-                        bw.write(COLUNAS_PAISES_SECUNDARIOS.replaceAll("\\.", "").replaceAll(">", ""));
+                        bw.write(COLUNAS_PAISES_SECUNDARIOS.replaceAll("\\.", "")
+                                .replace("Away", "AwayTeam")
+                                .replace("Home", "HomeTeam")
+                                .replace("HG", "FTHG")
+                                .replace("AG", "FTAG")
+                                .replace("Res", "FTR")
+                        );
                     }else {
                         String[] j = line.split(V);
                         SeasonUtil seasonUtil = converteSeasonSubstringPaisesSecundarios(j[2]);
                         String inicio_season = seasonUtil.getInicio_season();
                         String fim_season = seasonUtil.getFim_season();
-                        bw.write((j[0]+ V+j[1]+ V+inicio_season+ V+fim_season+ V+j[3]+ V+j[4]+ V+j[5]+ V+j[6]+ V+j[7]+ V+j[8]+ V+j[9]+ V+j[10]+ V+j[11]+ V+j[12]+ V+j[13]+ V+j[14]+ V+j[15]+ V+j[16]+ V+j[17]+ V+j[18] + LINESEP));
+                        bw.write((j[0]+ V+j[1]+ V+inicio_season+ V+fim_season+ V+j[3]+ V+j[4]+ V+j[5]+ V+j[6]+ V+j[7]+ V+j[8]+ V+j[9]+ V+j[10]+ V+j[11]+ V+j[12]+ V+j[13]+ V+j[14]+ V+j[15]+ V+j[16]+ V+j[17]+ V+j[18] + LINESEP).replaceAll(" ", ""));
                     }
                     iteraction++;
                 }

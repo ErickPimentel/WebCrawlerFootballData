@@ -15,20 +15,14 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
-import static Constantes.ConstantesGerenciadorArquivo.FILE_PATH_PASTA_V3;
-import static Constantes.ConstantesGerenciadorArquivo.FORMATO_JSON;
+import static Constantes.ConstantesGerenciadorArquivo.*;
 
 
 public class MongoDB {
 
-    private static final MongoClient client = MongoClients.create("mongodb+srv://testUser:55555555@footballdata.wskzl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
-
-    private static final MongoDatabase db = client.getDatabase("sampleDB");
-
-    private static final MongoCollection<Document> col = db.getCollection("sampleCollection");
-
-    public void JsonToMongoDataBase(List<Arquivo> lista_arquivos) throws IOException {
+    public void JsonToMongoDataBase(List<Arquivo> lista_arquivos, MongoCollection<Document> col) throws IOException {
 
         List<Document> lista_documento = new ArrayList<Document>();
 
@@ -55,8 +49,8 @@ public class MongoDB {
         }
 
         col.insertMany(lista_documento);
-
-
     }
+
+
 }
 

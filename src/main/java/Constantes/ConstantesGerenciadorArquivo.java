@@ -7,9 +7,9 @@ public interface ConstantesGerenciadorArquivo {
     String V = ",";
     String COUNTRY = "Country";
     String LEAGUE = "League";
-    String INICIO_SEASON = "InicioSeason";
-    String FIM_SEASON = "FimSeason";
-    String COLUNAS_PAISES_SECUNDARIOS = "Country,League," + INICIO_SEASON + V + FIM_SEASON + ",Date,Time,Home,Away,HG,AG,Res,PH,PD,PA,MaxH,MaxD,MaxA,AvgH,AvgD,AvgA" + LINESEP;
+    String START_SEASON = "StartSeason";
+    String END_SEASON = "EndSeason";
+    String COLUNAS_PAISES_SECUNDARIOS = "Country,League," + START_SEASON + V + END_SEASON + ",Date,Time,Home,Away,HG,AG,Res,PH,PD,PA,MaxH,MaxD,MaxA,AvgH,AvgD,AvgA" + LINESEP;
     String UNDERSCORE = "_";
     String FORMATO_CSV = ".csv";
     String FORMATO_JSON = ".json";
@@ -18,6 +18,8 @@ public interface ConstantesGerenciadorArquivo {
     String FILE_PATH_PASTA_V3 = "C:\\Users\\Erick\\Desktop\\Arquivos\\v3\\";
     String PAISES_SECUNDARIOS = "PaisesSecundarios";
     String PAISES_PRINCIPAIS = "PaisesPrincipais";
+
+    String BID_FILE_PATH = "C:\\Users\\Erick\\Desktop\\BID_JSON\\";
 
 
 }

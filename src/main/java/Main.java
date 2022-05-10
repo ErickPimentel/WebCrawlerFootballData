@@ -1,5 +1,11 @@
 import DataBase.MongoDB;
 import Model.Arquivo;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import org.bson.Document;
+import static Constantes.ConstantesGerenciadorArquivo.FILE_PATH_PASTA_V3;
 
 import java.io.IOException;
 import java.util.List;
@@ -64,12 +70,18 @@ public class Main {
 //        };
 
 
+
         MongoDB mongo = new MongoDB();
+
+        MongoClient client = MongoClients.create("mongodb+srv://testUser:55555555@footballdata.wskzl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+        MongoDatabase db = client.getDatabase("sampleDB");
+        MongoCollection<Document> col = db.getCollection("sampleCollection");
+
         System.out.println("JsonToMongoDataBase - Paises Secundarios");
-        mongo.JsonToMongoDataBase(lista_arquivos_paises_secundarios);
+        mongo.JsonToMongoDataBase(lista_arquivos_paises_secundarios, col);
 
         System.out.println("JsonToMongoDataBase - Paises Principais");
-        mongo.JsonToMongoDataBase(lista_arquivos_paises_principais);
+        mongo.JsonToMongoDataBase(lista_arquivos_paises_principais, col);
 
     }
 }
