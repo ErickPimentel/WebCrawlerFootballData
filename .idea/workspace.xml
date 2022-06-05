@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5018b477-e483-44e4-9227-cbd18ecce5f7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Constantes/ConstantesGerenciadorArquivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Constantes/ConstantesGerenciadorArquivo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataBase/MongoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBase/MongoDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GerenciadorCSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GerenciadorCSV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Bid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Bid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Constantes/ConstantesGerenciadorArquivo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Constantes/ConstantesGerenciadorArquivo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DataBase/MongoDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DataBase/MongoDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GerenciadorCSV.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GerenciadorCSV.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +42,7 @@
     <property name="project.structure.side.proportion" value="0.52205884" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="Application.Bid">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Bid" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Bid" />
       <module name="WebCrawlerFootballData" />
@@ -82,8 +75,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Bid" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Bid" />
         <item itemvalue="Application.GerenciadorCSV" />
         <item itemvalue="Application.WebCrawler" />
       </list>

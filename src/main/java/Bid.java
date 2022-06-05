@@ -118,18 +118,18 @@ public class Bid {
 
 
         MongoClient client = MongoClients.create("mongodb+srv://testUser:55555555@footballdata.wskzl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
-        MongoDatabase db = client.getDatabase("BidDB");
-        MongoCollection<Document> col = db.getCollection("BidCollection");
+        MongoDatabase db = client.getDatabase("bd");
+        MongoCollection<Document> col = db.getCollection("contracts");
 
-        //jsonBIDToMongoDataBase(listJsonFiles, col);
+        jsonBIDToMongoDataBase(listJsonFiles, col);
         //System.out.println(retrieveAllDocuments(col));
         //System.out.println(retrieveSpecificDocument(col));
         //System.out.println(retrieveAllTeamNames(col));
         //System.out.println(retrieveAllTeamNamesAndTeamCodes(col));
 
 
-        System.out.println(retrieveTeams(col));
-        System.out.println(retrievePlayers(col));
+//        System.out.println(retrieveTeams(col));
+//        System.out.println(retrievePlayers(col));
 
     }
 }

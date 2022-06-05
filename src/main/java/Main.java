@@ -74,8 +74,8 @@ public class Main {
         MongoDB mongo = new MongoDB();
 
         MongoClient client = MongoClients.create("mongodb+srv://testUser:55555555@footballdata.wskzl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
-        MongoDatabase db = client.getDatabase("sampleDB");
-        MongoCollection<Document> col = db.getCollection("sampleCollection");
+        MongoDatabase db = client.getDatabase("bd");
+        MongoCollection<Document> col = db.getCollection("matches");
 
         System.out.println("JsonToMongoDataBase - Paises Secundarios");
         mongo.JsonToMongoDataBase(lista_arquivos_paises_secundarios, col);
