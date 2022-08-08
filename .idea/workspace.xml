@@ -42,7 +42,7 @@
     <property name="project.structure.side.proportion" value="0.52205884" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Bid">
     <configuration name="Bid" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Bid" />
       <module name="WebCrawlerFootballData" />
@@ -75,8 +75,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Bid" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.GerenciadorCSV" />
         <item itemvalue="Application.WebCrawler" />
       </list>
